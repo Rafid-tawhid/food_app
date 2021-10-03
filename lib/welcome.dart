@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_page.dart';
+
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
 
@@ -57,7 +59,9 @@ class WelcomePage extends StatelessWidget {
                      height: 45,
                      width: 280,
                      child: RaisedButton(
-                       onPressed: () {},
+                       onPressed: () {
+                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
+                       },
                        color: Colors.orange,
                        elevation: 5,
                        shape: RoundedRectangleBorder(
@@ -76,7 +80,7 @@ class WelcomePage extends StatelessWidget {
                      child: RaisedButton(
                        onPressed: () {},
                        color: Colors.white,
-                     
+
                        shape: RoundedRectangleBorder(
                          borderRadius: BorderRadius.all(Radius.circular(30),),
                          side: BorderSide(color: Colors.orange)
