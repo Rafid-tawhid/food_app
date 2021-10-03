@@ -25,6 +25,34 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.only(left: 8.0),
               child: Text("Login",style: TextStyle(fontSize: 30,color: Colors.orange),),
             ),
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "E-mail",
+                    hintStyle: TextStyle(color: Colors.black87),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.orange)
+                    )
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    hintStyle: TextStyle(color: Colors.black87),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.orange)
+                    )
+                  ),
+                ),
+              ),
+            ],
           )
         ],
       ),
