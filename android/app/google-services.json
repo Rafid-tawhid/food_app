@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51457075319",
+    "project_id": "bitbirdsdemo",
+    "storage_bucket": "bitbirdsdemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51457075319:android:6535d599be60171c7abe72",
+        "android_client_info": {
+          "package_name": "com.example.ordering_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51457075319-s8h18pr49kea2l5v7o8jjtpfal6gb4en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkM4Uo4QNPnnTNK_MhuWTF7VLvS8XI874"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51457075319-s8h18pr49kea2l5v7o8jjtpfal6gb4en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

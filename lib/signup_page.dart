@@ -9,10 +9,16 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  Widget TextField({required String hintText, required IconData icon}) {
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passController = new TextEditingController();
+  TextEditingController nameController = new TextEditingController();
+  TextEditingController phoneController = new TextEditingController();
+  late String email,pass,name,phone;
+  Widget TextField({required String hintText, required IconData icon,required TextEditingController controller}) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: TextFormField(
+        controller: controller,
         decoration: InputDecoration(
             prefixIcon: Icon(
               icon,
@@ -20,6 +26,7 @@ class _SignUpState extends State<SignUp> {
               color: Colors.orange,
             ),
             hintText: hintText,
+
             hintStyle: TextStyle(color: Colors.black87),
             enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: Colors.orange))),
@@ -44,54 +51,63 @@ class _SignUpState extends State<SignUp> {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 0.0),
-                child: Text(
-                  "Sign Up",
-                  style: TextStyle(fontSize: 30, color: Colors.orange),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 0.0),
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(fontSize: 30, color: Colors.orange),
+                  ),
                 ),
               ),
-            ),
-            Column(
-              children: [
-                TextField(
-                  hintText: "Username",
-                  icon: Icons.person,
-                ),
-                TextField(hintText: "E-mail", icon: Icons.mail_outline),
-                TextField(hintText: "Phone No", icon: Icons.phone),
-                TextField(hintText: "Password", icon: Icons.password_sharp),
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 20),
-              height: 50,
-              width: 180,
-              child: RaisedButton(
-                onPressed: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.orange,
-                child: Text(
-                  "Register",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w300),
+              Column(
+                children: [
+                  TextField(
+                    hintText: "Username",
+                    controller: nameController,
+                    icon: Icons.person_outline,
+                  ),
+                  TextField(hintText: "E-mail",controller: emailController, icon: Icons.mail_outline),
+                  TextField(hintText: "Phone No",controller: phoneController, icon: Icons.phone),
+                  TextField(hintText: "Password",controller: passController, icon: Icons.password_sharp),
+                ],
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                height: 50,
+                width: 180,
+                child: RaisedButton(
+                  onPressed: () {
+                    name=nameController.text;
+                    email=emailController.text;
+                    phone=phoneController.text;
+                    pass=passController.text;
+                    // print(name+email+phone+pass);
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  color: Colors.orange,
+                  child: Text(
+                    "Register",
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300),
+                  ),
                 ),
               ),
-            ),
 
-          ],
+            ],
+          ),
         ),
-      ),
+      )
     );
   }
 }
