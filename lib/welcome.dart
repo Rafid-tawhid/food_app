@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ordering_app/signup_page.dart';
 
 import 'login_page.dart';
 
@@ -11,13 +12,18 @@ class WelcomePage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              height: double.infinity,
-              width: double.infinity,
-              child: Center(
-                child: Image.network(
-                  'https://cdn.dribbble.com/users/5246351/screenshots/13929150/media/a784069618028fe9374f915d8f915279.jpg?compress=1&resize=400x300',
-                  fit: BoxFit.cover,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 78.0),
+              child: Container(
+                height: double.infinity,
+                width: double.infinity,
+                child: Center(
+                  child: Image.network(
+                    'https://bitbirds.com/it/wp-content/uploads/2016/02/bitBirds_Logo_1-e1455279973193.png',
+                    height: 100,
+                    width: 250,
+
+                  ),
                 ),
               ),
             ),
@@ -27,7 +33,7 @@ class WelcomePage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "Welcome to Foddu",
+                    "Welcome to BitBirds",
                     style: TextStyle(
                         fontSize: 30,
                         color: Colors.deepOrange,
@@ -40,16 +46,12 @@ class WelcomePage extends StatelessWidget {
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
                         children: [
-                          Text("Order Food From Our Resturant",
+                          Text("We are Your IT Department",
                               style: TextStyle(
                                 fontSize: 14,
                                 color: Colors.black87,
                               )),
-                          Text("Make a Resvation",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.black87,
-                              )),
+
                         ],
                       ),
                     ),
@@ -76,9 +78,11 @@ class WelcomePage extends StatelessWidget {
                  Padding(padding: EdgeInsets.only(top: 20),
                    child:  Container(
                      height: 45,
-                     width: 280,
+                     width: 240,
                      child: RaisedButton(
-                       onPressed: () {},
+                       onPressed: () {
+                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
+                       },
                        color: Colors.white,
 
                        shape: RoundedRectangleBorder(
