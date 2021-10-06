@@ -62,7 +62,7 @@ class _SignUpState extends State<SignUp> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 0.0),
                   child: Text(
-                    "Sign Up",
+                    "Sign Up Free",
                     style: TextStyle(fontSize: 30, color: Colors.orange),
                   ),
                 ),
@@ -75,8 +75,10 @@ class _SignUpState extends State<SignUp> {
                     icon: Icons.person_outline,
                   ),
                   TextField(hintText: "E-mail",controller: emailController, icon: Icons.mail_outline),
-                  TextField(hintText: "Phone No",controller: phoneController, icon: Icons.phone),
-                  TextField(hintText: "Password",controller: passController, icon: Icons.password_sharp),
+                  TextField(hintText: "Phone No",controller: phoneController, icon: Icons.phone_android_outlined),
+                  TextField(hintText: "Password",controller: passController, icon: Icons.password_outlined),
+
+
                 ],
               ),
               Container(

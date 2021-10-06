@@ -50,6 +50,7 @@ dev_dependencies:
 #  firebase_storage: ^10.0.4
 #  firebase_core: ^1.7.0
   carousel_slider: ^4.0.0
+  liquid_progress_indicator: ^0.4.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

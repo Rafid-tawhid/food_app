@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ordering_app/signup_page.dart';
 
+import 'ServicePage.dart';
 import 'about_page.dart';
+import 'contact_page.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -50,13 +53,24 @@ class _DashboardState extends State<Dashboard> {
                 ),
               )),
               ListTile(
-                title: Text('Our Services'),
+                title: Text('Home'),
                 leading: Icon(
-                  Icons.cleaning_services_outlined,
+                  Icons.home_outlined,
                   color: Colors.orange,
                 ),
                 onTap: () {
-                  // Update the state of the app.
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dashboard()));
+                  // ...
+                },
+              ),
+              ListTile(
+                title: Text('Our Services'),
+                leading: Icon(
+                  Icons.settings,
+
+                ),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ServicePage()));
                   // ...
                 },
               ),
@@ -90,7 +104,8 @@ class _DashboardState extends State<Dashboard> {
                 title: Text('Contact Us'),
                 leading: Icon(Icons.call_end_outlined),
                 onTap: () {
-                  // Update the state of the app.
+
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ContactPage()));
                   // ...
                 },
               ),
